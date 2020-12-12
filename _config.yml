@@ -14,11 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 lang: en-US
-title: My Awesome Site
-email:
+title: Maegan Tucker
+email: mtucker@caltech.edu
 description:
 baseurl: # the optional subpath of your site, e.g. "/blog"
-url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url: "https://maegant.github.io"
 author:
   name:
   twitter:
@@ -74,6 +74,13 @@ exclude:
   - /docs # ignore Basically Basic sample site
   - /example # ignore Basically Basic dev site
 
+
+# Collections
+collections:
+  personal-projects:
+    output: true
+    permalink: /:collection/:path/
+
 # Front Matter Defaults
 defaults:
   # _posts
@@ -82,4 +89,11 @@ defaults:
       type: posts
     values:
       layout: post
-      read_time: true
+      read_time: 
+  # _recipes
+  - scope:
+      path: "_personal-projects"
+      type: personal-projects
+    values:
+      layout: post
+      read_time: 
